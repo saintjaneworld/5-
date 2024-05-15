@@ -1,0 +1,51 @@
+#include <iostream>
+#include <vector>
+#include <string> 
+using namespace std;
+
+class information {
+public:
+    string hername;
+    int herdigit;
+    information(string name, int digit) : hername(name), herdigit(digit) {
+        cout << "회원가입이 완료되었습니다." << endl << endl;
+    }
+
+
+    int main() {
+        int n;
+        vector<information> swingmember;
+
+        do {
+            cout << "***** SWING 회원 정보 관리 프로그램 ***** " << endl << endl;
+            cout << "1. 회원가입" << endl << "2. 로그인" << endl << "3. 회원 정보 수정" << endl << "4. 종료" << endl << endl;
+            cout << "번호를 입력하세요 : ";
+            cin >> n;
+
+            if (n < 1 || n > 4) {
+                cout << endl << "정확한 번호를 입력해주세요." << endl << endl;
+                continue;
+            }
+
+            switch (n) {
+            case 1: {
+                cout << endl;
+                cout << "***** 회원가입을 진행합니다 *****" << endl << endl;
+                string name;
+                cout << "이름을 입력하세요 : ";
+                cin >> name;
+                cout << endl;
+                int num;
+                cout << "전화번호를 입력하세요 : ";
+                cin >> num;
+                cout << endl;
+                swingmember.push_back(information(name, num));
+                break;
+            }
+                  // 추가 기능(로그인, 회원정보 수정 등) 구현 부분
+            }
+        } while (n != 4);
+        cout << endl << "SWING 회원 정보 관리 프로그램을 종료합니다." << endl << endl;
+        return 0;
+    }
+};
